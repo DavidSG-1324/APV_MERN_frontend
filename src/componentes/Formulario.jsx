@@ -16,7 +16,7 @@ const Formulario = () => {
 
 	const [aviso, setAviso] = useState({});
 
-	const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 	useEffect(() => {
 		if(paciente?._id) {
@@ -42,7 +42,7 @@ const Formulario = () => {
 			return;
 		}
 
-		if(!regex.test(email)) {
+		if(!regexEmail.test(email)) {
 			setAviso({msg: 'El Email no es válido', error: true});
 			return;
 		}
@@ -70,11 +70,8 @@ const Formulario = () => {
 				id
 			});
 
-			if(!respuesta.error) {
-				setAviso({msg:'Paciente editado correctamente', error: false});
-			} else {
-				setAviso(respuesta);
-			}
+
+			setAviso(respuesta);
 		}
 
 		setNombre('');

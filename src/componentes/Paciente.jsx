@@ -52,8 +52,7 @@ const Paciente = (props) => {
 				<button
 					className="rounded-lg bg-red-600 text-white font-bold uppercase px-10 py-2 hover:bg-red-700"
 					type="button"
-					onClick={() => (eliminarPaciente(_id))}
-					>
+					onClick={() => (eliminarPaciente(_id))}>
 					Eliminar
 				</button>
 			</div>

@@ -81,6 +81,8 @@ export const PacientesProvider = (props) => {
 
 				setPacientes(pacientesActualizado);
 
+				return {msg:'Paciente editado correctamente', error: false};
+
 			} catch(error) {
 				// console.log(error);
 				return {msg: error.response.data.msg, error: true};
