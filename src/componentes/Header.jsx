@@ -26,7 +26,6 @@ const Header = () => {
 
 					<button
 						className="text-white font-bold uppercase text-sm"
-						type="button"
 						onClick={cerrarSesion}>
 						Cerrar Sesión
 					</button>

@@ -32,7 +32,7 @@ const Formulario = () => {
 	const handleSubmit = async evento => {
 		evento.preventDefault();
 
-		if([nombre, propietario, email, sintomas].includes('')) {
+		if([nombre, propietario, email, fecha, sintomas].includes('')) {
 			setAviso({msg: 'Todos los campos son obligatorios', error: true});
 			return;
 		}
